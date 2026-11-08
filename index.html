@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>AI Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen text-white">
+
+<!-- Floating button -->
+<button id="toggle"
+  class="fixed bottom-6 right-6 size-14 rounded-full
+  bg-[#d97757] text-xl shadow-[0_0_35px_#d9775730]
+  hover:scale-110 transition-all duration-300">
+  ✳
+</button>
+
+<!-- Chat window -->
+<div id="chat"
+  class="hidden fixed bottom-24 right-6
+  w-[calc(100vw-32px)] sm:w-[400px] h-[560px] max-h-[80vh]
+  glass border border-white/10 rounded-2xl shadow-2xl
+  flex flex-col overflow-hidden fade-in">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between px-5 py-4
+    border-b border-white/[.06]">
+
+    <div class="flex items-center gap-3">
+      <div class="size-10 rounded-xl bg-[#d97757]/10
+        flex items-center justify-center text-[#d97757] text-xl">✳</div>
+
+      <div>
+        <h1 class="text-sm font-medium tracking-wide">Assistente AI</h1>
+        <p class="text-xs text-gray-500 mt-1">Sempre aqui para ajudar</p>
+      </div>
+    </div>
+
+    <div class="flex gap-3 text-gray-500">
+      <button id="close" class="hover:text-white transition text-lg">×</button>
+    </div>
+  </header>
+
+  <!-- Messages -->
+  <div id="messages"
+    class="flex-1 overflow-y-auto p-5 space-y-5">
+
+    <div class="flex gap-3 fade-in">
+      <div class="text-[#d97757] mt-1">✳</div>
+      <div class="bg-white/[.04] border border-white/[.04]
+        rounded-2xl rounded-tl-sm p-3.5 text-sm leading-6 text-gray-300">
+        Olá! 👋<br>
+        Como posso ajudar você hoje?
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Loading / Cancel -->
+  <div id="loading" class="hidden px-5 pb-3">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3 text-sm text-gray-500">
+        <span class="text-[#d97757]">✳</span>
+        <span>Pensando</span>
+        <div class="dots flex gap-1">
+          <span class="size-1.5 bg-[#d97757] rounded-full"></span>
+          <span class="size-1.5 bg-[#d97757] rounded-full"></span>
+          <span class="size-1.5 bg-[#d97757] rounded-full"></span>
+        </div>
+      </div>
+
+      <button id="cancel"
+        class="text-xs text-[#d97757] border border-[#d97757]/30
+        rounded-lg px-3 py-1.5 hover:bg-[#d97757]/10 transition">
+        ✕ Cancelar
+      </button>
+    </div>
+  </div>
+
+  <!-- Input -->
+  <form id="form" class="p-4 pt-2">
+    <div class="flex items-center gap-2 bg-white/[.04]
+      border border-white/[.08] rounded-xl p-2
+      focus-within:border-[#d97757]/40 transition">
+
+      <input id="input"
+        placeholder="Converse com seu assistente..."
+        class="flex-1 bg-transparent outline-none text-sm px-2
+        placeholder:text-gray-600"
+        autocomplete="off">
+
+      <button id="send"
+        class="size-9 rounded-lg bg-[#d97757] text-white
+        hover:bg-[#c46648] transition flex items-center justify-center">
+        ↑
+      </button>
+    </div>
+
+    <p class="text-center text-[10px] text-gray-600 mt-3">
+      IA local · As respostas podem conter erros
+    </p>
+  </form>
+</div>
+
+<script type="module" src="./main.js"></script>
+</body>
+</html>

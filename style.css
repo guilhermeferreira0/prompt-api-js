@@ -1,0 +1,112 @@
+/* DEFAULT */
+body {
+  background: radial-gradient(ellipse at top, #211812 0%, #0b0b0b 55%);
+}
+.glass {
+  background: rgba(20,20,20,.92);
+  backdrop-filter: blur(24px);
+}
+.dots span {
+  animation: pulse 1.2s infinite ease-in-out;
+}
+.dots span:nth-child(2) { animation-delay: .15s }
+.dots span:nth-child(3) { animation-delay: .3s }
+@keyframes pulse {
+  0%, 60%, 100% { opacity: .25; transform: translateY(0) }
+  30% { opacity: 1; transform: translateY(-3px) }
+}
+.fade-in { animation: fade .25s ease-out }
+@keyframes fade {
+  from { opacity: 0; transform: translateY(8px) }
+  to { opacity: 1; transform: translateY(0) }
+}
+#messages::-webkit-scrollbar { width: 4px }
+#messages::-webkit-scrollbar-thumb {
+  background: #333; border-radius: 10px
+}
+
+/* MARKDOWN */
+.markdown-body {
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.markdown-body p {
+  margin: 10px 0;
+}
+
+.markdown-body strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.markdown-body em {
+  color: #d4d4d4;
+  font-style: italic;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  color: #fff;
+  font-weight: 600;
+  margin: 20px 0 10px;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 22px;
+  margin: 12px 0;
+}
+
+.markdown-body ul {
+  list-style: disc;
+}
+
+.markdown-body ol {
+  list-style: decimal;
+}
+
+.markdown-body li {
+  margin: 5px 0;
+}
+
+.markdown-body code {
+  background: #292929;
+  color: #e9a185;
+  padding: 3px 6px;
+  border-radius: 5px;
+  font-size: .9em;
+}
+
+.markdown-body pre {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 14px;
+  margin: 14px 0;
+  overflow-x: auto;
+}
+
+.markdown-body pre code {
+  background: transparent;
+  padding: 0;
+  color: #e5e5e5;
+}
+
+.markdown-body blockquote {
+  border-left: 3px solid #d97757;
+  padding-left: 12px;
+  color: #999;
+  margin: 12px 0;
+}
+
+.markdown-body a {
+  color: #e99576;
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  border-color: #333;
+  margin: 18px 0;
+}
